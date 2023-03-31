@@ -4047,6 +4047,26 @@ var TDX_keys = new URLSearchParams(TDX_data);
 
 /***/ }),
 
+/***/ "./src/js/context.js":
+/*!***************************!*\
+  !*** ./src/js/context.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "context_1": () => (/* binding */ context_1),
+/* harmony export */   "context_2": () => (/* binding */ context_2)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var context_1 = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)();
+var context_2 = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(1);
+
+
+/***/ }),
+
 /***/ "./src/js/pages/Accommodation/Accommodation.js":
 /*!*****************************************************!*\
   !*** ./src/js/pages/Accommodation/Accommodation.js ***!
@@ -4083,15 +4103,58 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _components_Banner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Banner */ "./src/js/pages/components/Banner.js");
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Header */ "./src/js/pages/components/Header.js");
-/* harmony import */ var _ActivityMain__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ActivityMain */ "./src/js/pages/Activity/ActivityMain.js");
+/* harmony import */ var _components_ScrollTop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ScrollTop */ "./src/js/pages/components/ScrollTop.js");
+/* harmony import */ var _ActivityMain__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ActivityMain */ "./src/js/pages/Activity/ActivityMain.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
 
 var Activity = function Activity() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header__WEBPACK_IMPORTED_MODULE_2__.Header, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Banner__WEBPACK_IMPORTED_MODULE_1__.Banner, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ActivityMain__WEBPACK_IMPORTED_MODULE_3__.ActivityMain, null, "\u8FD1\u671F\u6D3B\u52D5"));
+  window.scrollTo(0, 0);
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useParams)(),
+    id = _useParams.id;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("近期活動"),
+    _useState2 = _slicedToArray(_useState, 2),
+    title = _useState2[0],
+    set_title = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState4 = _slicedToArray(_useState3, 2),
+    activity_kind = _useState4[0],
+    set_activity_kind = _useState4[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (id == 1) {
+      set_title("節日慶典");
+      set_activity_kind(["節慶活動"]);
+    } else if (id == 2) {
+      set_title("藝文活動");
+      set_activity_kind(["藝文活動", undefined]);
+    } else if (id == 3) {
+      set_title("戶外遊憩");
+      set_activity_kind(["自行車活動", "遊憩活動", "其他"]);
+    } else if (id == 4) {
+      set_title("一年一度");
+      set_activity_kind(["年度活動"]);
+    } else {
+      set_title("近期活動");
+    }
+  }, [id]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header__WEBPACK_IMPORTED_MODULE_2__.Header, {
+    id: id
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Banner__WEBPACK_IMPORTED_MODULE_1__.Banner, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ActivityMain__WEBPACK_IMPORTED_MODULE_4__.ActivityMain, {
+    title: title,
+    activity_kind: activity_kind
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ScrollTop__WEBPACK_IMPORTED_MODULE_3__.ScrollTop, null));
 };
 
 
@@ -4111,7 +4174,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_MainItems__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MainItems */ "./src/js/pages/components/MainItems.js");
 /* harmony import */ var _components_MainPageBtn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/MainPageBtn */ "./src/js/pages/components/MainPageBtn.js");
-/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constant */ "./src/js/constant.js");
+/* harmony import */ var _components_SearchTips__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/SearchTips */ "./src/js/pages/components/SearchTips.js");
+/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../constant */ "./src/js/constant.js");
+/* harmony import */ var _images_street_1_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../images/street-1.jpg */ "./src/images/street-1.jpg");
+/* harmony import */ var _images_firework_1_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../images/firework-1.jpg */ "./src/images/firework-1.jpg");
+/* harmony import */ var _images_structures_2_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../images/structures-2.jpg */ "./src/images/structures-2.jpg");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -4126,8 +4193,15 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
+
+
 var ActivityMain = function ActivityMain(_ref) {
-  var children = _ref.children;
+  var title = _ref.title,
+    city = _ref.city,
+    activity_kind = _ref.activity_kind,
+    normal_search = _ref.normal_search;
   //全部活動
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
@@ -4165,6 +4239,7 @@ var ActivityMain = function ActivityMain(_ref) {
     _useState12 = _slicedToArray(_useState11, 2),
     btn_select = _useState12[0],
     set_btn_select = _useState12[1];
+
   //依被選擇的按鈕 產生按鈕 並且更改顏色
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var x = parseInt(btn_select) - 1;
@@ -4190,32 +4265,39 @@ var ActivityMain = function ActivityMain(_ref) {
     });
     set_btn_display(array);
   }, [btn_select]);
+
   //頁面數字按鈕點擊事件
   var page_handle = function page_handle(e) {
     set_btn_select(e.target.innerHTML);
   };
-  //頁面按鈕顯示狀態
+
   //頁面左右按鈕顯示狀態
   var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(["", ""]),
     _useState14 = _slicedToArray(_useState13, 2),
     btn_row_display = _useState14[0],
     set_btn_row_display = _useState14[1];
   // *** 每5頁成1組 所以讓總頁數對5取餘數 最後 5-餘數 = 最後一組裡沒有用的頁數 ***
-  var z = 5 - Math.ceil(activity_conformity.length / 8) % 5;
+  var remainder = Math.ceil(activity_conformity.length / 8) % 5;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (parseInt(btn_select) > 0 && parseInt(btn_select) <= 5) {
+    if (btn_select == 0) {
+      set_btn_row_display(["none", "none"]);
+    } else if (parseInt(btn_select) > 0 && parseInt(btn_select) <= 5 && Math.ceil(activity_conformity.length / 8) > 5) {
       set_btn_row_display(["none", ""]);
-    } else if (parseInt(btn_select) > Math.ceil(activity_conformity.length / 8) - 5 + z) {
+    } else if (remainder !== 0 && parseInt(btn_select) > Math.ceil(activity_conformity.length / 8) - remainder && Math.ceil(activity_conformity.length / 8) > 5) {
       set_btn_row_display(["", "none"]);
-    } else {
+    } else if (remainder == 0 && parseInt(btn_select) > Math.ceil(activity_conformity.length / 8) - 5) {
+      set_btn_row_display(["", "none"]);
+    } else if (parseInt(btn_select) > 5) {
       set_btn_row_display(["", ""]);
+    } else {
+      set_btn_row_display(["none", "none"]);
     }
-  }, [btn_select]);
+  }, [btn_select, activity_conformity]);
 
   //頁面左右按鈕點擊事件
   var btn_handle_right = function btn_handle_right() {
     set_btn_select(function (btn) {
-      return parseInt(btn) + 5;
+      return parseInt(btn) + 5 - ((btn % 5 == 0 ? 5 : btn % 5) - 1);
     });
     var arr = btn_display.map(function (item) {
       if (item.btn_id + 5 <= Math.ceil(activity_conformity.length / 8)) {
@@ -4235,7 +4317,7 @@ var ActivityMain = function ActivityMain(_ref) {
   };
   var btn_handle_left = function btn_handle_left() {
     set_btn_select(function (btn) {
-      return parseInt(btn) - 5;
+      return parseInt(btn) - 5 - ((btn % 5 == 0 ? 5 : btn % 5) - 1);
     });
     var arr = btn_display.map(function (item) {
       return {
@@ -4245,11 +4327,12 @@ var ActivityMain = function ActivityMain(_ref) {
     });
     set_btn_display(arr);
   };
+
   // 登入TDX API
   fetch("https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/openid-connect/token", {
     method: 'POST',
     header: 'content-type:application/x-www-form-urlencoded',
-    body: _constant__WEBPACK_IMPORTED_MODULE_3__.TDX_keys
+    body: _constant__WEBPACK_IMPORTED_MODULE_4__.TDX_keys
   });
 
   // 取得活動數據後傳入陣列
@@ -4286,41 +4369,144 @@ var ActivityMain = function ActivityMain(_ref) {
     }
     get_api();
   }, []);
+
   //取得時間適合的活動
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    set_activity_conformity(activity_all.filter(function (item) {
-      //取得進入網站時間
-      var one_day_date = new Date();
-      var one_day_month = one_day_date.getMonth() + 1;
-      var one_day = one_day_date.getDay();
-      //活動時間
-      var start = item.StartTime;
-      var end = item.EndTime;
-      //進入時間 在活動期間 或 前一個月 才顯示
-      if (one_day_month - start.substring(5, 7) >= -1 && one_day_month <= end.substring(5, 7)) {
-        if (start.substring(5, 7) - 1 <= one_day_month < end.substring(5, 7)) {
-          return item;
-        } else if (one_day_month == end.substring(5, 7) && one_day <= end.substring(8, 10)) {
-          return item;
+    if (city == undefined && activity_kind == undefined && normal_search == undefined) {
+      set_activity_conformity(activity_all.filter(function (item) {
+        //取得進入網站時間
+        var one_day_date = new Date();
+        var one_day_month = one_day_date.getMonth() + 1;
+        var one_day = one_day_date.getDay();
+        //活動時間
+        var start = item.StartTime;
+        var end = item.EndTime;
+        //進入時間 在活動期間 或 前一個月 才顯示
+        if (one_day_month - start.substring(5, 7) >= -1 && one_day_month <= end.substring(5, 7)) {
+          if (start.substring(5, 7) - 1 <= one_day_month < end.substring(5, 7)) {
+            return item;
+          } else if (one_day_month == end.substring(5, 7) && one_day <= end.substring(8, 10)) {
+            return item;
+          }
         }
-      }
-    }));
-  }, [activity_all]);
+      }));
+    } else if (city == undefined && normal_search == undefined && activity_kind.length == 3) {
+      set_activity_conformity(activity_all.filter(function (item) {
+        return item.Class1 == activity_kind[0] || item.Class1 == activity_kind[1] || item.Class1 == activity_kind[2];
+      }));
+      set_btn_select(1);
+      set_btn_display([{
+        btn_id: 1,
+        font_color: "white",
+        btn_color: "#ff7b1a"
+      }, {
+        btn_id: 2
+      }, {
+        btn_id: 3
+      }, {
+        btn_id: 4
+      }, {
+        btn_id: 5
+      }]);
+    } else if (city == undefined && normal_search == undefined && activity_kind.length == 2) {
+      set_activity_conformity(activity_all.filter(function (item) {
+        return item.Class1 == activity_kind[0] || item.Class1 == activity_kind[1];
+      }));
+      set_btn_select(1);
+      set_btn_display([{
+        btn_id: 1,
+        font_color: "white",
+        btn_color: "#ff7b1a"
+      }, {
+        btn_id: 2
+      }, {
+        btn_id: 3
+      }, {
+        btn_id: 4
+      }, {
+        btn_id: 5
+      }]);
+    } else if (city == undefined && normal_search == undefined && activity_kind.length == 1) {
+      set_activity_conformity(activity_all.filter(function (item) {
+        return item.Class1 == activity_kind[0];
+      }));
+      set_btn_select(1);
+      set_btn_display([{
+        btn_id: 1,
+        font_color: "white",
+        btn_color: "#ff7b1a"
+      }, {
+        btn_id: 2
+      }, {
+        btn_id: 3
+      }, {
+        btn_id: 4
+      }, {
+        btn_id: 5
+      }]);
+    } else if (city !== undefined) {
+      set_activity_conformity(activity_all.filter(function (item) {
+        return item.City == city;
+      }));
+      set_btn_select(1);
+      set_btn_display([{
+        btn_id: 1,
+        font_color: "white",
+        btn_color: "#ff7b1a"
+      }, {
+        btn_id: 2
+      }, {
+        btn_id: 3
+      }, {
+        btn_id: 4
+      }, {
+        btn_id: 5
+      }]);
+    } else {
+      set_activity_conformity(activity_all.filter(function (item) {
+        return item.ActivityName.indexOf(normal_search) !== -1;
+      }));
+      set_btn_select(1);
+    }
+  }, [activity_all, city, activity_kind, normal_search]);
+
+  //當沒有合適的項目要呈現時 頁面選擇為0
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (activity_conformity.length == 0 && normal_search !== undefined) {
+      set_btn_select(0);
+    }
+  }, [activity_conformity, normal_search]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "main_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "first"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "main_title"
-  }, "\u8FD1\u671F\u6D3B\u52D5"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "main_items_container"
-  }, activity_conformity.map(function (item, index) {
+  }, activity_conformity == "" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_SearchTips__WEBPACK_IMPORTED_MODULE_3__.SearchTips, {
+    explain: "找不到關於",
+    search_for: normal_search
+  }) : activity_conformity.map(function (item, index) {
     if (index >= activity_handle1 && index <= activity_handle2) {
+      var picture_url = item.Picture.PictureUrl1;
+      if (picture_url == undefined && index % 3 == 0) {
+        picture_url = _images_structures_2_jpg__WEBPACK_IMPORTED_MODULE_7__;
+      } else if (picture_url == undefined && index % 2 == 0) {
+        picture_url = _images_firework_1_jpg__WEBPACK_IMPORTED_MODULE_6__;
+      } else if (picture_url == undefined) {
+        picture_url = _images_street_1_jpg__WEBPACK_IMPORTED_MODULE_5__;
+      } else {
+        picture_url = item.Picture.PictureUrl1;
+      }
       var date = "".concat(item.StartTime.substring(5, 10), " ~ ").concat(item.EndTime.substring(5, 10));
       var caption = "日期 : ";
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_MainItems__WEBPACK_IMPORTED_MODULE_1__.MainItems, {
         key: item.ActivityID,
-        picture_url: item.Picture.PictureUrl1,
+        picture_url: picture_url,
         name: item.ActivityName,
-        caption: caption + date
+        caption: caption + date,
+        id: item.ActivityID
       });
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -4346,7 +4532,7 @@ var ActivityMain = function ActivityMain(_ref) {
     style: {
       display: btn_row_display[1]
     }
-  }, " \xBB "))));
+  }, " \xBB ")))));
 };
 
 
@@ -4364,15 +4550,58 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _components_Banner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Banner */ "./src/js/pages/components/Banner.js");
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Header */ "./src/js/pages/components/Header.js");
-/* harmony import */ var _FoodMain__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FoodMain */ "./src/js/pages/Food/FoodMain.js");
+/* harmony import */ var _components_ScrollTop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ScrollTop */ "./src/js/pages/components/ScrollTop.js");
+/* harmony import */ var _FoodMain__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FoodMain */ "./src/js/pages/Food/FoodMain.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
 
 var Food = function Food() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header__WEBPACK_IMPORTED_MODULE_2__.Header, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Banner__WEBPACK_IMPORTED_MODULE_1__.Banner, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FoodMain__WEBPACK_IMPORTED_MODULE_3__.FoodMain, null));
+  window.scrollTo(0, 0);
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useParams)(),
+    id = _useParams.id;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("熱門美食"),
+    _useState2 = _slicedToArray(_useState, 2),
+    title = _useState2[0],
+    set_title = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState4 = _slicedToArray(_useState3, 2),
+    food_kind = _useState4[0],
+    set_food_kind = _useState4[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (id == 1) {
+      set_title("經典美食");
+      set_food_kind(["中式美食", "地方特產", "夜市小吃", "火烤料理", "素食"]);
+    } else if (id == 2) {
+      set_title("特色風味");
+      set_food_kind(["異國料理", "其他", undefined]);
+    } else if (id == 3) {
+      set_title("甜點冰品");
+      set_food_kind(["甜點冰品"]);
+    } else if (id == 4) {
+      set_title("伴手禮");
+      set_food_kind(["伴手禮"]);
+    } else {
+      set_title("熱門美食");
+    }
+  }, [id]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header__WEBPACK_IMPORTED_MODULE_2__.Header, {
+    id: id
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Banner__WEBPACK_IMPORTED_MODULE_1__.Banner, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FoodMain__WEBPACK_IMPORTED_MODULE_4__.FoodMain, {
+    title: title,
+    food_kind: food_kind
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ScrollTop__WEBPACK_IMPORTED_MODULE_3__.ScrollTop, null));
 };
 
 
@@ -4392,7 +4621,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_MainItems__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MainItems */ "./src/js/pages/components/MainItems.js");
 /* harmony import */ var _components_MainPageBtn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/MainPageBtn */ "./src/js/pages/components/MainPageBtn.js");
-/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constant */ "./src/js/constant.js");
+/* harmony import */ var _components_SearchTips__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/SearchTips */ "./src/js/pages/components/SearchTips.js");
+/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../constant */ "./src/js/constant.js");
+/* harmony import */ var _images_food_1_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../images/food-1.jpg */ "./src/images/food-1.jpg");
+/* harmony import */ var _images_food_2_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../images/food-2.jpg */ "./src/images/food-2.jpg");
+/* harmony import */ var _images_food_3_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../images/food-3.jpg */ "./src/images/food-3.jpg");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -4407,7 +4640,15 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var FoodMain = function FoodMain() {
+
+
+
+
+var FoodMain = function FoodMain(_ref) {
+  var title = _ref.title,
+    city = _ref.city,
+    food_kind = _ref.food_kind,
+    normal_search = _ref.normal_search;
   //全部美食
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
@@ -4445,6 +4686,7 @@ var FoodMain = function FoodMain() {
     _useState12 = _slicedToArray(_useState11, 2),
     btn_select = _useState12[0],
     set_btn_select = _useState12[1];
+
   //依被選擇的按鈕 產生按鈕 並且更改顏色
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var x = parseInt(btn_select) - 1;
@@ -4470,32 +4712,39 @@ var FoodMain = function FoodMain() {
     });
     set_btn_display(array);
   }, [btn_select]);
+
   //頁面數字按鈕點擊事件
   var page_handle = function page_handle(e) {
     set_btn_select(e.target.innerHTML);
   };
-  //頁面按鈕顯示狀態
+
   //頁面左右按鈕顯示狀態
   var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(["", ""]),
     _useState14 = _slicedToArray(_useState13, 2),
     btn_row_display = _useState14[0],
     set_btn_row_display = _useState14[1];
   // *** 每5頁成1組 所以讓總頁數對5取餘數 最後 5-餘數 = 最後一組裡沒有用的頁數 ***
-  var z = 5 - Math.ceil(food_conformity.length / 8) % 5;
+  var remainder = Math.ceil(food_conformity.length / 8) % 5;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (parseInt(btn_select) > 0 && parseInt(btn_select) <= 5) {
+    if (btn_select == 0) {
+      set_btn_row_display(["none", "none"]);
+    } else if (parseInt(btn_select) > 0 && parseInt(btn_select) <= 5 && Math.ceil(food_conformity.length / 8) > 5) {
       set_btn_row_display(["none", ""]);
-    } else if (parseInt(btn_select) > Math.ceil(food_conformity.length / 8) - 5 + z) {
+    } else if (remainder !== 0 && parseInt(btn_select) > Math.ceil(food_conformity.length / 8) - remainder && Math.ceil(food_conformity.length / 8) > 5) {
       set_btn_row_display(["", "none"]);
-    } else {
+    } else if (remainder == 0 && parseInt(btn_select) > Math.ceil(food_conformity.length / 8) - 5) {
+      set_btn_row_display(["", "none"]);
+    } else if (parseInt(btn_select) > 5) {
       set_btn_row_display(["", ""]);
+    } else {
+      set_btn_row_display(["none", "none"]);
     }
-  }, [btn_select]);
+  }, [btn_select, food_conformity]);
 
   //頁面左右按鈕點擊事件
   var btn_handle_right = function btn_handle_right() {
     set_btn_select(function (btn) {
-      return parseInt(btn) + 5;
+      return parseInt(btn) + 5 - ((btn % 5 == 0 ? 5 : btn % 5) - 1);
     });
     var arr = btn_display.map(function (item) {
       if (item.btn_id + 5 <= Math.ceil(food_conformity.length / 8)) {
@@ -4515,7 +4764,7 @@ var FoodMain = function FoodMain() {
   };
   var btn_handle_left = function btn_handle_left() {
     set_btn_select(function (btn) {
-      return parseInt(btn) - 5;
+      return parseInt(btn) - 5 - ((btn % 5 == 0 ? 5 : btn % 5) - 1);
     });
     var arr = btn_display.map(function (item) {
       return {
@@ -4525,11 +4774,12 @@ var FoodMain = function FoodMain() {
     });
     set_btn_display(arr);
   };
+
   // 登入TDX API
   fetch("https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/openid-connect/token", {
     method: 'POST',
     header: 'content-type:application/x-www-form-urlencoded',
-    body: _constant__WEBPACK_IMPORTED_MODULE_3__.TDX_keys
+    body: _constant__WEBPACK_IMPORTED_MODULE_4__.TDX_keys
   });
 
   // 取得美食數據後傳入陣列
@@ -4566,25 +4816,128 @@ var FoodMain = function FoodMain() {
     }
     get_api();
   }, []);
-  //原先為取得時間適合的活動 (待修改)
+
+  //原先取得全部 在搜尋後變更為適合的
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    set_food_conformity(food_all);
-  }, [food_all]);
+    if (city == undefined && food_kind == undefined && normal_search == undefined) {
+      set_food_conformity(food_all);
+    } else if (city == undefined && normal_search == undefined && food_kind.length == 5) {
+      set_food_conformity(food_all.filter(function (item) {
+        return item.Class == food_kind[0] || item.Class == food_kind[1] || item.Class == food_kind[2] || item.Class == food_kind[3] || item.Class == food_kind[4];
+      }));
+      set_btn_select(1);
+      set_btn_display([{
+        btn_id: 1,
+        font_color: "white",
+        btn_color: "#ff7b1a"
+      }, {
+        btn_id: 2
+      }, {
+        btn_id: 3
+      }, {
+        btn_id: 4
+      }, {
+        btn_id: 5
+      }]);
+    } else if (city == undefined && normal_search == undefined && food_kind.length == 3) {
+      set_food_conformity(food_all.filter(function (item) {
+        return item.Class == food_kind[0] || item.Class == food_kind[1] || item.Class == food_kind[2];
+      }));
+      set_btn_select(1);
+      set_btn_display([{
+        btn_id: 1,
+        font_color: "white",
+        btn_color: "#ff7b1a"
+      }, {
+        btn_id: 2
+      }, {
+        btn_id: 3
+      }, {
+        btn_id: 4
+      }, {
+        btn_id: 5
+      }]);
+    } else if (city == undefined && normal_search == undefined && food_kind.length == 1) {
+      set_food_conformity(food_all.filter(function (item) {
+        return item.Class == food_kind[0];
+      }));
+      set_btn_select(1);
+      set_btn_display([{
+        btn_id: 1,
+        font_color: "white",
+        btn_color: "#ff7b1a"
+      }, {
+        btn_id: 2
+      }, {
+        btn_id: 3
+      }, {
+        btn_id: 4
+      }, {
+        btn_id: 5
+      }]);
+    } else if (city !== undefined) {
+      set_food_conformity(food_all.filter(function (item) {
+        return item.City == city;
+      }));
+      set_btn_select(1);
+      set_btn_display([{
+        btn_id: 1,
+        font_color: "white",
+        btn_color: "#ff7b1a"
+      }, {
+        btn_id: 2
+      }, {
+        btn_id: 3
+      }, {
+        btn_id: 4
+      }, {
+        btn_id: 5
+      }]);
+    } else {
+      set_food_conformity(food_all.filter(function (item) {
+        return item.RestaurantName.indexOf(normal_search) !== -1;
+      }));
+      set_btn_select(1);
+    }
+  }, [food_all, city, food_kind, normal_search]);
+
+  //當沒有合適的項目要呈現時 頁面選擇為0
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (food_conformity.length == 0 && normal_search !== undefined) {
+      set_btn_select(0);
+    }
+  }, [food_conformity, normal_search]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "main_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "first"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "main_title"
-  }, "\u71B1\u9580\u7F8E\u98DF"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "main_items_container"
-  }, food_conformity.map(function (item, index) {
+  }, food_conformity == "" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_SearchTips__WEBPACK_IMPORTED_MODULE_3__.SearchTips, {
+    explain: "找不到關於",
+    search_for: normal_search
+  }) : food_conformity.map(function (item, index) {
     if (index >= food_handle1 && index <= food_handle2) {
+      var picture_url = item.Picture.PictureUrl1;
+      if (picture_url == undefined && index % 3 == 0) {
+        picture_url = _images_food_3_jpg__WEBPACK_IMPORTED_MODULE_7__;
+      } else if (picture_url == undefined && index % 2 == 0) {
+        picture_url = _images_food_2_jpg__WEBPACK_IMPORTED_MODULE_6__;
+      } else if (picture_url == undefined) {
+        picture_url = _images_food_1_jpg__WEBPACK_IMPORTED_MODULE_5__;
+      } else {
+        picture_url = item.Picture.PictureUrl1;
+      }
       var caption = item.City == undefined ? "Taiwan" : item.City;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_MainItems__WEBPACK_IMPORTED_MODULE_1__.MainItems, {
         key: item.RestaurantID,
-        picture_url: item.Picture.PictureUrl1,
+        picture_url: picture_url,
         name: item.RestaurantName,
-        restaurant: item.RestaurantName,
-        caption: caption
+        pin: item.RestaurantID,
+        caption: caption,
+        id: item.RestaurantID
       });
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -4595,7 +4948,7 @@ var FoodMain = function FoodMain() {
     style: {
       display: btn_row_display[0]
     }
-  }, " \xAB "), btn_display.map(function (item, index) {
+  }, " \xAB "), btn_display.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_MainPageBtn__WEBPACK_IMPORTED_MODULE_2__.MainPageBtn, {
       key: item.btn_id,
       number: item.btn_id,
@@ -4610,7 +4963,7 @@ var FoodMain = function FoodMain() {
     style: {
       display: btn_row_display[1]
     }
-  }, " \xBB "))));
+  }, " \xBB ")))));
 };
 
 
@@ -4632,17 +4985,604 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Banner_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Banner.js */ "./src/js/pages/components/Banner.js");
 /* harmony import */ var _Activity_ActivityMain_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Activity/ActivityMain.js */ "./src/js/pages/Activity/ActivityMain.js");
 /* harmony import */ var _Food_FoodMain_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Food/FoodMain.js */ "./src/js/pages/Food/FoodMain.js");
+/* harmony import */ var _components_ScrollTop_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/ScrollTop.js */ "./src/js/pages/components/ScrollTop.js");
+/* harmony import */ var _Scenery_SceneryMain_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Scenery/SceneryMain.js */ "./src/js/pages/Scenery/SceneryMain.js");
+/* harmony import */ var _components_footer_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/footer.js */ "./src/js/pages/components/footer.js");
+/* harmony import */ var _context_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../context.js */ "./src/js/context.js");
+/* harmony import */ var _components_Search_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Search.js */ "./src/js/pages/components/Search.js");
+
+
+
+
+
 
 
 
 
 
 var Home = function Home() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header_js__WEBPACK_IMPORTED_MODULE_1__.Header, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Banner_js__WEBPACK_IMPORTED_MODULE_2__.Banner, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "Main_container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Activity_ActivityMain_js__WEBPACK_IMPORTED_MODULE_3__.ActivityMain, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "Main_container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Food_FoodMain_js__WEBPACK_IMPORTED_MODULE_4__.FoodMain, null)));
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_context_js__WEBPACK_IMPORTED_MODULE_8__.context_1),
+    searching = _useContext.searching,
+    search_for = _useContext.search_for;
+  !searching && window.scrollTo(0, 0);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header_js__WEBPACK_IMPORTED_MODULE_1__.Header, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Banner_js__WEBPACK_IMPORTED_MODULE_2__.Banner, null), !searching && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Activity_ActivityMain_js__WEBPACK_IMPORTED_MODULE_3__.ActivityMain, {
+    title: "近期活動"
+  }), !searching && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Food_FoodMain_js__WEBPACK_IMPORTED_MODULE_4__.FoodMain, {
+    title: "熱門美食"
+  }), !searching && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Scenery_SceneryMain_js__WEBPACK_IMPORTED_MODULE_6__.SceneryMain, {
+    title: "熱門景點"
+  }), searching && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Search_js__WEBPACK_IMPORTED_MODULE_9__.Search, {
+    search_for: search_for
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_footer_js__WEBPACK_IMPORTED_MODULE_7__.Footer, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ScrollTop_js__WEBPACK_IMPORTED_MODULE_5__.ScrollTop, null));
+};
+
+
+/***/ }),
+
+/***/ "./src/js/pages/ItemsPage/CarouselItems.js":
+/*!*************************************************!*\
+  !*** ./src/js/pages/ItemsPage/CarouselItems.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CarouselItems": () => (/* binding */ CarouselItems)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../constant */ "./src/js/constant.js");
+/* harmony import */ var _images_NoPicture_small_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../images/NoPicture-small.png */ "./src/images/NoPicture-small.png");
+
+
+
+
+var CarouselItems = function CarouselItems(_ref) {
+  var item_name = _ref.item_name,
+    open_time = _ref.open_time,
+    img_url = _ref.img_url,
+    id = _ref.id,
+    set_carousel_focus = _ref.set_carousel_focus;
+  var mouse_on_carousel = function mouse_on_carousel() {
+    set_carousel_focus(true);
+  };
+  var mouse_out_carousel = function mouse_out_carousel() {
+    set_carousel_focus(false);
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/ItemsPage/").concat(id),
+    onMouseOver: mouse_on_carousel,
+    onMouseOut: mouse_out_carousel
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "item",
+    style: {
+      backgroundImage: "url(".concat(img_url == undefined ? _images_NoPicture_small_png__WEBPACK_IMPORTED_MODULE_2__ : img_url, ")")
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "item_name"
+  }, item_name), open_time !== undefined && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "item_open_time"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fa-sharp fa-solid fa-clock"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, " ", open_time)))));
+};
+
+
+/***/ }),
+
+/***/ "./src/js/pages/ItemsPage/ItemsPage.js":
+/*!*********************************************!*\
+  !*** ./src/js/pages/ItemsPage/ItemsPage.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ItemsPage": () => (/* binding */ ItemsPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../constant */ "./src/js/constant.js");
+/* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/footer */ "./src/js/pages/components/footer.js");
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Header */ "./src/js/pages/components/Header.js");
+/* harmony import */ var _components_ScrollTop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/ScrollTop */ "./src/js/pages/components/ScrollTop.js");
+/* harmony import */ var _ItemsPageCarousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ItemsPageCarousel */ "./src/js/pages/ItemsPage/ItemsPageCarousel.js");
+/* harmony import */ var _ItemsPageMain__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ItemsPageMain */ "./src/js/pages/ItemsPage/ItemsPageMain.js");
+/* harmony import */ var _PageBanner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./PageBanner */ "./src/js/pages/ItemsPage/PageBanner.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+var ItemsPage = function ItemsPage() {
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useParams)(),
+    id = _useParams.id;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    item_data = _useState2[0],
+    set_item_data = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    target_item = _useState4[0],
+    set_target_item = _useState4[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    window.scrollTo(0, 0);
+  }, [id]);
+  //登入TDX
+  fetch("https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/openid-connect/token", {
+    method: 'POST',
+    header: 'content-type:application/x-www-form-urlencoded',
+    body: _constant__WEBPACK_IMPORTED_MODULE_1__.TDX_keys
+  });
+  //利用ID取得正確API
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (id.charAt(1) == 1) {
+      var get_api = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+          var res, data;
+          return _regeneratorRuntime().wrap(function _callee$(_context) {
+            while (1) switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return fetch("https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot?%24format=JSON");
+              case 2:
+                res = _context.sent;
+                _context.next = 5;
+                return res.json();
+              case 5:
+                data = _context.sent;
+                set_item_data(data);
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }, _callee);
+        }));
+        return function get_api() {
+          return _ref.apply(this, arguments);
+        };
+      }();
+      get_api();
+    } else if (id.charAt(1) == 2) {
+      var _get_api = /*#__PURE__*/function () {
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+          var res, data;
+          return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+            while (1) switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return fetch("https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity?%24format=JSON");
+              case 2:
+                res = _context2.sent;
+                _context2.next = 5;
+                return res.json();
+              case 5:
+                data = _context2.sent;
+                set_item_data(data);
+              case 7:
+              case "end":
+                return _context2.stop();
+            }
+          }, _callee2);
+        }));
+        return function _get_api() {
+          return _ref2.apply(this, arguments);
+        };
+      }();
+      _get_api();
+    } else if (id.charAt(1) == 3) {
+      var _get_api2 = /*#__PURE__*/function () {
+        var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+          var res, data;
+          return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+            while (1) switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return fetch("https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant?%24format=JSON");
+              case 2:
+                res = _context3.sent;
+                _context3.next = 5;
+                return res.json();
+              case 5:
+                data = _context3.sent;
+                set_item_data(data);
+              case 7:
+              case "end":
+                return _context3.stop();
+            }
+          }, _callee3);
+        }));
+        return function _get_api2() {
+          return _ref3.apply(this, arguments);
+        };
+      }();
+      _get_api2();
+    }
+  }, [id]);
+  //利用ID找到目標資料
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (id.charAt(1) == 1) {
+      set_target_item(item_data.filter(function (item) {
+        return item.ScenicSpotID == id;
+      }));
+    } else if (id.charAt(1) == 2) {
+      set_target_item(item_data.filter(function (item) {
+        return item.ActivityID == id;
+      }));
+    } else if (id.charAt(1) == 3) {
+      set_target_item(item_data.filter(function (item) {
+        return item.RestaurantID == id;
+      }));
+    }
+  }, [item_data]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header__WEBPACK_IMPORTED_MODULE_3__.Header, {
+    sticky: true
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_PageBanner__WEBPACK_IMPORTED_MODULE_7__.PageBanner, {
+    sorts: id.charAt(1)
+  }), target_item.map(function (item) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ItemsPageMain__WEBPACK_IMPORTED_MODULE_6__.ItemsPageMain, {
+      key: item,
+      page_title: id.charAt(1) == 1 ? item.ScenicSpotName : id.charAt(1) == 2 ? item.ActivityName : item.RestaurantName,
+      page_description: id.charAt(1) == 1 ? item.DescriptionDetail : item.Description,
+      open_time: item.OpenTime !== undefined ? item.OpenTime : item.StartTime !== undefined ? item.StartTime.substring(0, 10) + item.EndTime.substring(0, 10) : undefined,
+      address: item.Address,
+      web_url: item.WebsiteUrl,
+      phone: item.Phone,
+      img_1: item.Picture.PictureUrl1,
+      img_2: item.Picture.PictureUrl2,
+      img_3: item.Picture.PictureUrl3,
+      sorts: id.charAt(1)
+    });
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ItemsPageCarousel__WEBPACK_IMPORTED_MODULE_5__.ItemsPageCarousel, {
+    item_data: item_data,
+    target_item: target_item,
+    sorts: id.charAt(1)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_footer__WEBPACK_IMPORTED_MODULE_2__.Footer, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ScrollTop__WEBPACK_IMPORTED_MODULE_4__.ScrollTop, null));
+};
+
+
+/***/ }),
+
+/***/ "./src/js/pages/ItemsPage/ItemsPageCarousel.js":
+/*!*****************************************************!*\
+  !*** ./src/js/pages/ItemsPage/ItemsPageCarousel.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ItemsPageCarousel": () => (/* binding */ ItemsPageCarousel)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _CarouselItems__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselItems */ "./src/js/pages/ItemsPage/CarouselItems.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+var ItemsPageCarousel = function ItemsPageCarousel(_ref) {
+  var item_data = _ref.item_data,
+    target_item = _ref.target_item,
+    sorts = _ref.sorts;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    carousel_item = _useState2[0],
+    set_carousel_item = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    carousel_reference = _useState4[0],
+    set_carousel_reference = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(5),
+    _useState6 = _slicedToArray(_useState5, 2),
+    carousel_handle = _useState6[0],
+    set_carousel_handle = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    carousel_focus = _useState8[0],
+    set_carousel_focus = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState10 = _slicedToArray(_useState9, 2),
+    carousel_count = _useState10[0],
+    set_carousel_count = _useState10[1];
+
+  //依頁面目標設置 "輪播參考"
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    set_carousel_reference(target_item);
+  }, [target_item]);
+  //依"輪播參考"設置輪播項目
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (sorts == 1) {
+      set_carousel_item(item_data.filter(function (item) {
+        return item.City == carousel_reference[0].City && item.ScenicSpotID !== carousel_reference[0].ScenicSpotID;
+      }));
+    } else if (sorts == 2) {
+      set_carousel_item(item_data.filter(function (item) {
+        return item.City == carousel_reference[0].City && item.ActivityID !== carousel_reference[0].ActivityID;
+      }));
+    } else if (sorts == 3) {
+      set_carousel_item(item_data.filter(function (item) {
+        return item.City == carousel_reference[0].City && item.RestaurantID !== carousel_reference[0].RestaurantID;
+      }));
+    }
+  }, [carousel_reference]);
+  //設置輪播 並且在關注時去除輪播
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (carousel_focus == true) {
+      return;
+    } else if (carousel_focus == false && carousel_count < carousel_item.length - window.innerWidth * 0.65 / 245 && carousel_handle > carousel_item.length * -245 + window.innerWidth * 0.65) {
+      var carousel_int = setInterval(function () {
+        set_carousel_handle(function (previous) {
+          return previous - 245;
+        });
+        set_carousel_count(function (previous) {
+          return previous + 1;
+        });
+      }, 2500);
+      return function () {
+        return clearInterval(carousel_int);
+      };
+    } else if (carousel_count == Math.ceil(carousel_item.length - window.innerWidth * 0.65 / 245) || carousel_handle <= carousel_item.length * -245 + window.innerWidth * 0.65) {
+      var _carousel_int = setInterval(function () {
+        set_carousel_count(0);
+        set_carousel_handle(5);
+      }, 2800);
+      return function () {
+        return clearInterval(_carousel_int);
+      };
+    } else {
+      return;
+    }
+  }, [carousel_focus, carousel_item, carousel_count, carousel_handle]);
+  //左右點擊事件
+  var btn_left = function btn_left() {
+    set_carousel_handle(function (previous) {
+      if (previous <= -245 * Math.floor(window.innerWidth * 0.65 / 245)) {
+        return previous + 245 * Math.floor(window.innerWidth * 0.65 / 245);
+      } else {
+        return 5;
+      }
+    });
+  };
+  var btn_right = function btn_right() {
+    set_carousel_handle(function (previous) {
+      if (previous <= -245 * (carousel_item.length - 2 * Math.floor(window.innerWidth * 0.65 / 245))) {
+        return -245 * (carousel_item.length - Math.floor(window.innerWidth * 0.65 / 245));
+      } else if (carousel_item.length > Math.floor(window.innerWidth * 0.65 / 245)) {
+        return previous - 245 * Math.floor(window.innerWidth * 0.65 / 245);
+      }
+    });
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "page_carousel_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "carousel_title"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fa-solid fa-utensils"
+  }), carousel_reference.map(function (item) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      key: item
+    }, " ", item.City, "\u5176\u4ED6", sorts == 1 ? "景點" : sorts == 2 ? "活動" : "美食");
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "carousel_btn left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "btn_container",
+    onClick: btn_left
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fa-solid fa-caret-left"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "carousel_repeater"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "item_container",
+    style: {
+      marginLeft: "".concat(carousel_handle, "px")
+    }
+  }, carousel_item.map(function (item) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_CarouselItems__WEBPACK_IMPORTED_MODULE_1__.CarouselItems, {
+      key: sorts == 1 ? item.ScenicSpotID : sorts == 2 ? item.ActivityID : item.RestaurantID,
+      item_name: sorts == 1 ? item.ScenicSpotName : sorts == 2 ? item.ActivityName : item.RestaurantName,
+      open_time: item.OpenTime,
+      img_url: item.Picture.PictureUrl1,
+      id: sorts == 1 ? item.ScenicSpotID : sorts == 2 ? item.ActivityID : item.RestaurantID,
+      set_carousel_focus: set_carousel_focus
+    });
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "carousel_btn right"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "btn_container",
+    onClick: btn_right
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fa-solid fa-caret-right"
+  })))));
+};
+
+
+/***/ }),
+
+/***/ "./src/js/pages/ItemsPage/ItemsPageMain.js":
+/*!*************************************************!*\
+  !*** ./src/js/pages/ItemsPage/ItemsPageMain.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ItemsPageMain": () => (/* binding */ ItemsPageMain)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _images_NoPicture_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../images/NoPicture.png */ "./src/images/NoPicture.png");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+var ItemsPageMain = function ItemsPageMain(_ref) {
+  var page_title = _ref.page_title,
+    page_description = _ref.page_description,
+    open_time = _ref.open_time,
+    address = _ref.address,
+    web_url = _ref.web_url,
+    phone = _ref.phone,
+    img_1 = _ref.img_1,
+    img_2 = _ref.img_2,
+    img_3 = _ref.img_3,
+    sorts = _ref.sorts;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(img_1),
+    _useState2 = _slicedToArray(_useState, 2),
+    img_big = _useState2[0],
+    set_img_big = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
+    _useState4 = _slicedToArray(_useState3, 2),
+    img_select = _useState4[0],
+    set_img_select = _useState4[1];
+  var img_handle = function img_handle(e) {
+    set_img_big(e.target.src);
+    if (e.target.id == "img1") {
+      set_img_select(1);
+    } else if (e.target.id == "img2") {
+      set_img_select(2);
+    } else if (e.target.id == "img3") {
+      set_img_select(3);
+    }
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    set_img_big(img_1);
+  }, [img_1]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    window.scrollTo(0, 0);
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "main_page_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "page_img_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "page_img_big"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    src: img_big == undefined ? _images_NoPicture_png__WEBPACK_IMPORTED_MODULE_1__ : img_big,
+    alt: ""
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "page_img_small"
+  }, img_1 !== undefined && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    id: "img1",
+    src: img_1,
+    onClick: img_handle,
+    style: {
+      border: img_select == 1 ? "solid 2px #ff7b1a" : ""
+    }
+  }), img_2 !== undefined && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    id: "img2",
+    src: img_2,
+    onClick: img_handle,
+    style: {
+      border: img_select == 2 ? "solid 2px #ff7b1a" : ""
+    }
+  }), img_3 !== undefined && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    id: "img3",
+    src: img_3,
+    onClick: img_handle,
+    style: {
+      border: img_select == 3 ? "solid 2px #ff7b1a" : ""
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "text_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "page_title"
+  }, page_title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "page_description"
+  }, page_description), open_time !== undefined && sorts == 2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "open_time"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fa-sharp fa-solid fa-clock"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "\u958B\u59CB\u6642\u9593: ", open_time.substring(0, 10), " \u7D50\u675F\u6642\u9593: ", open_time.substring(10, 20))), open_time !== undefined && sorts == 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "open_time"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fa-sharp fa-solid fa-clock"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, open_time)), open_time !== undefined && sorts == 3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "open_time"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fa-sharp fa-solid fa-clock"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, open_time)), address !== undefined && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "position"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "address"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fa-solid fa-location-dot"
+  }), "  ", address), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "google_map"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.google.com/maps/place/".concat(address),
+    target: "_blank"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fa-solid fa-location-dot"
+  }), "  Google Map"))), web_url !== undefined && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "website"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: web_url,
+    target: "_blank"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fa-sharp fa-solid fa-globe"
+  }), "  ", web_url)), phone !== undefined && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "phone"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fa-solid fa-phone"
+  }), "  ", phone))));
+};
+
+
+/***/ }),
+
+/***/ "./src/js/pages/ItemsPage/PageBanner.js":
+/*!**********************************************!*\
+  !*** ./src/js/pages/ItemsPage/PageBanner.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "PageBanner": () => (/* binding */ PageBanner)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _images_page_banner_food_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../images/page-banner-food.jpg */ "./src/images/page-banner-food.jpg");
+/* harmony import */ var _images_page_banner_road_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../images/page-banner-road.jpg */ "./src/images/page-banner-road.jpg");
+/* harmony import */ var _images_page_banner_sea_1_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../images/page-banner-sea-1.jpg */ "./src/images/page-banner-sea-1.jpg");
+
+
+
+
+var PageBanner = function PageBanner(_ref) {
+  var sorts = _ref.sorts;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "page_banner_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "page_banner",
+    style: {
+      backgroundImage: "url(".concat(sorts == 1 ? _images_page_banner_sea_1_jpg__WEBPACK_IMPORTED_MODULE_3__ : sorts == 2 ? _images_page_banner_road_jpg__WEBPACK_IMPORTED_MODULE_2__ : _images_page_banner_food_jpg__WEBPACK_IMPORTED_MODULE_1__, ")")
+    }
+  }, "1")));
 };
 
 
@@ -4660,14 +5600,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _Home_Home_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Home/Home.js */ "./src/js/pages/Home/Home.js");
 /* harmony import */ var _Scenery_Scenery_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Scenery/Scenery.js */ "./src/js/pages/Scenery/Scenery.js");
 /* harmony import */ var _constant_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../constant.js */ "./src/js/constant.js");
 /* harmony import */ var _Food_Food_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Food/Food.js */ "./src/js/pages/Food/Food.js");
 /* harmony import */ var _Accommodation_Accommodation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Accommodation/Accommodation.js */ "./src/js/pages/Accommodation/Accommodation.js");
 /* harmony import */ var _Activity_Activity_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Activity/Activity.js */ "./src/js/pages/Activity/Activity.js");
+/* harmony import */ var _ItemsPage_ItemsPage_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ItemsPage/ItemsPage.js */ "./src/js/pages/ItemsPage/ItemsPage.js");
+/* harmony import */ var _context_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../context.js */ "./src/js/context.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
@@ -4677,22 +5627,52 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Nav = function Nav() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    searching = _useState2[0],
+    set_searching = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState4 = _slicedToArray(_useState3, 2),
+    search_for = _useState4[0],
+    set_search_for = _useState4[1];
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_context_js__WEBPACK_IMPORTED_MODULE_8__.context_1.Provider, {
+    value: {
+      searching: searching,
+      set_searching: set_searching,
+      search_for: search_for,
+      set_search_for: set_search_for
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
     path: "".concat(_constant_js__WEBPACK_IMPORTED_MODULE_3__.Home_path),
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Home_Home_js__WEBPACK_IMPORTED_MODULE_1__.Home, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
     path: "".concat(_constant_js__WEBPACK_IMPORTED_MODULE_3__.Home_path, "/Scenery"),
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Scenery_Scenery_js__WEBPACK_IMPORTED_MODULE_2__.Scenery, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+    path: ":id",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Scenery_Scenery_js__WEBPACK_IMPORTED_MODULE_2__.Scenery, null)
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
     path: "".concat(_constant_js__WEBPACK_IMPORTED_MODULE_3__.Home_path, "/Accommodation"),
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Accommodation_Accommodation_js__WEBPACK_IMPORTED_MODULE_5__.Accommodation, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
     path: "".concat(_constant_js__WEBPACK_IMPORTED_MODULE_3__.Home_path, "/Food"),
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Food_Food_js__WEBPACK_IMPORTED_MODULE_4__.Food, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+    path: ":id",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Food_Food_js__WEBPACK_IMPORTED_MODULE_4__.Food, null)
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
     path: "".concat(_constant_js__WEBPACK_IMPORTED_MODULE_3__.Home_path, "/Activity"),
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Activity_Activity_js__WEBPACK_IMPORTED_MODULE_6__.Activity, null)
-  }))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+    path: ":id",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Activity_Activity_js__WEBPACK_IMPORTED_MODULE_6__.Activity, null)
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+    path: "".concat(_constant_js__WEBPACK_IMPORTED_MODULE_3__.Home_path, "/ItemsPage"),
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ItemsPage_ItemsPage_js__WEBPACK_IMPORTED_MODULE_7__.ItemsPage, null)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+    path: ":id",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ItemsPage_ItemsPage_js__WEBPACK_IMPORTED_MODULE_7__.ItemsPage, null)
+  }))))));
 };
 
 
@@ -4710,15 +5690,63 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _components_Banner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Banner */ "./src/js/pages/components/Banner.js");
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Header */ "./src/js/pages/components/Header.js");
-/* harmony import */ var _SceneryMain__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SceneryMain */ "./src/js/pages/Scenery/SceneryMain.js");
+/* harmony import */ var _components_ScrollTop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ScrollTop */ "./src/js/pages/components/ScrollTop.js");
+/* harmony import */ var _SceneryMain__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SceneryMain */ "./src/js/pages/Scenery/SceneryMain.js");
+/* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../context */ "./src/js/context.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
 
 
 
 
 var Scenery = function Scenery() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header__WEBPACK_IMPORTED_MODULE_2__.Header, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Banner__WEBPACK_IMPORTED_MODULE_1__.Banner, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SceneryMain__WEBPACK_IMPORTED_MODULE_3__.SceneryMain, null));
+  window.scrollTo(0, 0);
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useParams)(),
+    id = _useParams.id;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("熱門景點"),
+    _useState2 = _slicedToArray(_useState, 2),
+    title = _useState2[0],
+    set_title = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState4 = _slicedToArray(_useState3, 2),
+    taiwan_area = _useState4[0],
+    set_taiwan_area = _useState4[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (id == 1) {
+      set_title("北台灣");
+      set_taiwan_area(["臺北市", "新北市", "基隆市", "新竹市", "新竹縣", "桃園市", "宜蘭縣"]);
+    } else if (id == 2) {
+      set_title("中台灣");
+      set_taiwan_area(["臺中市", "苗栗縣", "彰化縣", "南投縣", "雲林縣"]);
+    } else if (id == 3) {
+      set_title("南台灣");
+      set_taiwan_area(["高雄市", "臺南市", "嘉義市", "嘉義縣", "屏東縣", "澎湖縣"]);
+    } else if (id == 4) {
+      set_title("東台灣");
+      set_taiwan_area(["花蓮縣", "臺東縣"]);
+    } else if (id == 5) {
+      set_title("離島地區");
+      set_taiwan_area(["金門縣", "連江縣"]);
+    } else {
+      set_title("熱門景點");
+    }
+  }, [id]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header__WEBPACK_IMPORTED_MODULE_2__.Header, {
+    id: id
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Banner__WEBPACK_IMPORTED_MODULE_1__.Banner, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SceneryMain__WEBPACK_IMPORTED_MODULE_4__.SceneryMain, {
+    title: title,
+    taiwan_area: taiwan_area
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ScrollTop__WEBPACK_IMPORTED_MODULE_3__.ScrollTop, null));
 };
 
 
@@ -4739,6 +5767,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_MainItems__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MainItems */ "./src/js/pages/components/MainItems.js");
 /* harmony import */ var _components_MainPageBtn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/MainPageBtn */ "./src/js/pages/components/MainPageBtn.js");
 /* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constant */ "./src/js/constant.js");
+/* harmony import */ var _images_lake_2_V2_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../images/lake-2-V2.jpg */ "./src/images/lake-2-V2.jpg");
+/* harmony import */ var _images_mountain_6_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../images/mountain-6.jpg */ "./src/images/mountain-6.jpg");
+/* harmony import */ var _images_street_2_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../images/street-2.jpg */ "./src/images/street-2.jpg");
+/* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Search */ "./src/js/pages/components/Search.js");
+/* harmony import */ var _components_SearchTips__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/SearchTips */ "./src/js/pages/components/SearchTips.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -4753,7 +5786,16 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var SceneryMain = function SceneryMain() {
+
+
+
+
+
+var SceneryMain = function SceneryMain(_ref) {
+  var title = _ref.title,
+    city = _ref.city,
+    taiwan_area = _ref.taiwan_area,
+    normal_search = _ref.normal_search;
   //全部景點
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
@@ -4791,6 +5833,7 @@ var SceneryMain = function SceneryMain() {
     _useState12 = _slicedToArray(_useState11, 2),
     btn_select = _useState12[0],
     set_btn_select = _useState12[1];
+
   //依被選擇的按鈕 產生按鈕 並且更改顏色
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var x = parseInt(btn_select) - 1;
@@ -4816,32 +5859,39 @@ var SceneryMain = function SceneryMain() {
     });
     set_btn_display(array);
   }, [btn_select]);
+
   //頁面數字按鈕點擊事件
   var page_handle = function page_handle(e) {
     set_btn_select(e.target.innerHTML);
   };
-  //頁面按鈕顯示狀態
+
   //頁面左右按鈕顯示狀態
   var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(["", ""]),
     _useState14 = _slicedToArray(_useState13, 2),
     btn_row_display = _useState14[0],
     set_btn_row_display = _useState14[1];
   // *** 每5頁成1組 所以讓總頁數對5取餘數 最後 5-餘數 = 最後一組裡沒有用的頁數 ***
-  var z = 5 - Math.ceil(scenery_conformity.length / 8) % 5;
+  var remainder = Math.ceil(scenery_conformity.length / 8) % 5;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (parseInt(btn_select) > 0 && parseInt(btn_select) <= 5) {
+    if (btn_select == 0) {
+      set_btn_row_display(["none", "none"]);
+    } else if (parseInt(btn_select) > 0 && parseInt(btn_select) <= 5 && Math.ceil(scenery_conformity.length / 8) > 5) {
       set_btn_row_display(["none", ""]);
-    } else if (parseInt(btn_select) > Math.ceil(scenery_conformity.length / 8) - 5 + z) {
+    } else if (remainder !== 0 && parseInt(btn_select) > Math.ceil(scenery_conformity.length / 8) - remainder && Math.ceil(scenery_conformity.length / 8) > 5) {
       set_btn_row_display(["", "none"]);
-    } else {
+    } else if (remainder == 0 && parseInt(btn_select) > Math.ceil(scenery_conformity.length / 8) - 5) {
+      set_btn_row_display(["", "none"]);
+    } else if (parseInt(btn_select) > 5) {
       set_btn_row_display(["", ""]);
+    } else {
+      set_btn_row_display(["none", "none"]);
     }
-  }, [btn_select]);
+  }, [btn_select, scenery_conformity]);
 
   //頁面左右按鈕點擊事件
   var btn_handle_right = function btn_handle_right() {
     set_btn_select(function (btn) {
-      return parseInt(btn) + 5;
+      return parseInt(btn) + 5 - ((btn % 5 == 0 ? 5 : btn % 5) - 1);
     });
     var arr = btn_display.map(function (item) {
       if (item.btn_id + 5 <= Math.ceil(scenery_conformity.length / 8)) {
@@ -4861,7 +5911,7 @@ var SceneryMain = function SceneryMain() {
   };
   var btn_handle_left = function btn_handle_left() {
     set_btn_select(function (btn) {
-      return parseInt(btn) - 5;
+      return parseInt(btn) - 5 - ((btn % 5 == 0 ? 5 : btn % 5) - 1);
     });
     var arr = btn_display.map(function (item) {
       return {
@@ -4871,6 +5921,7 @@ var SceneryMain = function SceneryMain() {
     });
     set_btn_display(arr);
   };
+
   // 登入TDX API
   fetch("https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/openid-connect/token", {
     method: 'POST',
@@ -4912,25 +5963,146 @@ var SceneryMain = function SceneryMain() {
     }
     get_api();
   }, []);
-  //原先為取得時間適合的活動 (待修改)
+
+  //原先取得全部 在搜尋後變更為適合的
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    set_scenery_conformity(scenery_all);
-  }, [scenery_all]);
+    if (city == undefined && taiwan_area == undefined && normal_search == undefined) {
+      set_scenery_conformity(scenery_all);
+    } else if (city == undefined && normal_search == undefined && taiwan_area.length == 7) {
+      set_scenery_conformity(scenery_all.filter(function (item) {
+        return item.City == taiwan_area[0] || item.City == taiwan_area[1] || item.City == taiwan_area[2] || item.City == taiwan_area[3] || item.City == taiwan_area[4] || item.City == taiwan_area[5] || item.City == taiwan_area[6];
+      }));
+      set_btn_select(1);
+      set_btn_display([{
+        btn_id: 1,
+        font_color: "white",
+        btn_color: "#ff7b1a"
+      }, {
+        btn_id: 2
+      }, {
+        btn_id: 3
+      }, {
+        btn_id: 4
+      }, {
+        btn_id: 5
+      }]);
+    } else if (city == undefined && normal_search == undefined && taiwan_area.length == 6) {
+      set_scenery_conformity(scenery_all.filter(function (item) {
+        return item.City == taiwan_area[0] || item.City == taiwan_area[1] || item.City == taiwan_area[2] || item.City == taiwan_area[3] || item.City == taiwan_area[4] || item.City == taiwan_area[5];
+      }));
+      set_btn_select(1);
+      set_btn_display([{
+        btn_id: 1,
+        font_color: "white",
+        btn_color: "#ff7b1a"
+      }, {
+        btn_id: 2
+      }, {
+        btn_id: 3
+      }, {
+        btn_id: 4
+      }, {
+        btn_id: 5
+      }]);
+    } else if (city == undefined && normal_search == undefined && taiwan_area.length == 5) {
+      set_scenery_conformity(scenery_all.filter(function (item) {
+        return item.City == taiwan_area[0] || item.City == taiwan_area[1] || item.City == taiwan_area[2] || item.City == taiwan_area[3] || item.City == taiwan_area[4];
+      }));
+      set_btn_select(1);
+      set_btn_display([{
+        btn_id: 1,
+        font_color: "white",
+        btn_color: "#ff7b1a"
+      }, {
+        btn_id: 2
+      }, {
+        btn_id: 3
+      }, {
+        btn_id: 4
+      }, {
+        btn_id: 5
+      }]);
+    } else if (city == undefined && normal_search == undefined && taiwan_area.length == 2) {
+      set_scenery_conformity(scenery_all.filter(function (item) {
+        return item.City == taiwan_area[0] || item.City == taiwan_area[1];
+      }));
+      set_btn_select(1);
+      set_btn_display([{
+        btn_id: 1,
+        font_color: "white",
+        btn_color: "#ff7b1a"
+      }, {
+        btn_id: 2
+      }, {
+        btn_id: 3
+      }, {
+        btn_id: 4
+      }, {
+        btn_id: 5
+      }]);
+    } else if (city !== undefined) {
+      set_scenery_conformity(scenery_all.filter(function (item) {
+        return item.City == city;
+      }));
+      set_btn_select(1);
+      set_btn_display([{
+        btn_id: 1,
+        font_color: "white",
+        btn_color: "#ff7b1a"
+      }, {
+        btn_id: 2
+      }, {
+        btn_id: 3
+      }, {
+        btn_id: 4
+      }, {
+        btn_id: 5
+      }]);
+    } else {
+      set_scenery_conformity(scenery_all.filter(function (item) {
+        return item.ScenicSpotName.indexOf(normal_search) !== -1;
+      }));
+      set_btn_select(1);
+    }
+  }, [scenery_all, city, taiwan_area, normal_search]);
+
+  //當沒有合適的項目要呈現時 頁面選擇為0
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (scenery_conformity.length == 0 && normal_search !== undefined) {
+      set_btn_select(0);
+    }
+  }, [scenery_conformity, normal_search]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "main_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "first"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "main_title"
-  }, "\u71B1\u9580\u666F\u9EDE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "main_items_container"
-  }, scenery_conformity.map(function (item, index) {
+  }, scenery_conformity == "" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_SearchTips__WEBPACK_IMPORTED_MODULE_8__.SearchTips, {
+    explain: "找不到關於",
+    search_for: normal_search
+  }) : scenery_conformity.map(function (item, index) {
     if (index >= scenery_handle1 && index <= scenery_handle2) {
+      var picture_url = item.Picture.PictureUrl1;
+      if (picture_url == undefined && index % 3 == 0) {
+        picture_url = _images_lake_2_V2_jpg__WEBPACK_IMPORTED_MODULE_4__;
+      } else if (picture_url == undefined && index % 2 == 0) {
+        picture_url = _images_mountain_6_jpg__WEBPACK_IMPORTED_MODULE_5__;
+      } else if (picture_url == undefined) {
+        picture_url = _images_street_2_jpg__WEBPACK_IMPORTED_MODULE_6__;
+      } else {
+        picture_url = item.Picture.PictureUrl1;
+      }
       var caption = item.City == undefined ? "Taiwan" : item.City;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_MainItems__WEBPACK_IMPORTED_MODULE_1__.MainItems, {
         key: item.ScenicSpotID,
-        picture_url: item.Picture.PictureUrl1,
+        picture_url: picture_url,
         name: item.ScenicSpotName,
-        restaurant: item.RestaurantName,
-        caption: caption
+        pin: item.ScenicSpotID,
+        caption: caption,
+        id: item.ScenicSpotID
       });
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -4956,7 +6128,7 @@ var SceneryMain = function SceneryMain() {
     style: {
       display: btn_row_display[1]
     }
-  }, " \xBB "))));
+  }, " \xBB ")))));
 };
 
 
@@ -4974,7 +6146,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Search */ "./src/js/pages/components/Search.js");
+/* harmony import */ var _SearchBtn__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchBtn */ "./src/js/pages/components/SearchBtn.js");
 /* harmony import */ var _images_mountain_3_bannerV3_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../images/mountain-3-bannerV3.jpg */ "./src/images/mountain-3-bannerV3.jpg");
 /* harmony import */ var _images_mountain_4_bannerV2_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../images/mountain-4-bannerV2.jpg */ "./src/images/mountain-4-bannerV2.jpg");
 /* harmony import */ var _images_mountain_1_banner_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../images/mountain-1-banner.jpg */ "./src/images/mountain-1-banner.jpg");
@@ -5080,8 +6252,9 @@ var Banner = function Banner() {
     }, 4500);
     return function () {
       return clearInterval(carousel_int);
-    }; //這裡回傳是一個function 
-  }, [carousel]); //如果直接return clear 就不會動
+    }; //使每一次輪播圖時 都先停止輪轉後再重新進入輪轉(進入時判定從哪張圖開始)
+  }, [carousel]); //這裡回傳是一個function 
+  //如果直接return clear 就不會動
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "banner_container"
@@ -5134,7 +6307,7 @@ var Banner = function Banner() {
     onMouseOver: btn_hover,
     onMouseOut: btn_primary,
     onClick: btn_handle
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Search__WEBPACK_IMPORTED_MODULE_1__.Search, null));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SearchBtn__WEBPACK_IMPORTED_MODULE_1__.SearchBtn, null));
 };
 
 
@@ -5152,7 +6325,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../constant */ "./src/js/constant.js");
 /* harmony import */ var _images_CentralArea_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../images/CentralArea.png */ "./src/images/CentralArea.png");
 /* harmony import */ var _images_NorthernArea_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../images/NorthernArea.png */ "./src/images/NorthernArea.png");
@@ -5167,6 +6340,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_Painting_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../images/Painting.png */ "./src/images/Painting.png");
 /* harmony import */ var _images_Bike_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../images/Bike.png */ "./src/images/Bike.png");
 /* harmony import */ var _images_Clink_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../images/Clink.png */ "./src/images/Clink.png");
+/* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../context */ "./src/js/context.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -5189,7 +6363,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var Header = function Header() {
+
+var Header = function Header(_ref) {
+  var sticky = _ref.sticky,
+    id = _ref.id;
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_context__WEBPACK_IMPORTED_MODULE_15__.context_1),
+    set_searching = _useContext.set_searching;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([{
       id: "item0",
       display_handle: "none"
@@ -5206,6 +6385,26 @@ var Header = function Header() {
     _useState2 = _slicedToArray(_useState, 2),
     display = _useState2[0],
     set_display = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(["none", -100]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    side_bar_display = _useState4[0],
+    set_side_bar_display = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      t0: "none",
+      t1: "none",
+      t2: "none"
+    }),
+    _useState6 = _slicedToArray(_useState5, 2),
+    side_bar_detail = _useState6[0],
+    set_side_bar_detail = _useState6[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    set_side_bar_display(["none", -100]);
+    set_side_bar_detail({
+      t0: "none",
+      t1: "none",
+      t2: "none"
+    });
+  }, [id]);
   var nav_item_hover = function nav_item_hover() {
     var new_display = display.map(function (display) {
       if (display.display_handle === "block") {
@@ -5253,145 +6452,306 @@ var Header = function Header() {
       display_handle: "none"
     }]);
   };
+  var logo = function logo() {
+    set_searching(false);
+  };
+  var side_bar_show = function side_bar_show() {
+    if (side_bar_display[1] == -100) {
+      set_side_bar_display(["block", 0]);
+    } else {
+      set_side_bar_display(["none", -100]);
+    }
+  };
+  var side_bar_hide = function side_bar_hide() {
+    set_side_bar_display(["none", -100]);
+  };
+  var side_bar_detail_handler = function side_bar_detail_handler(e) {
+    if (e.target.id == "t0") {
+      var t0 = side_bar_detail.t0,
+        t1 = side_bar_detail.t1,
+        t2 = side_bar_detail.t2;
+      set_side_bar_detail({
+        t0: t0 == "none" ? "block" :  true ? "none" : 0,
+        t1: t1,
+        t2: t2
+      });
+    } else if (e.target.id == "t1") {
+      var _t = side_bar_detail.t0,
+        _t2 = side_bar_detail.t1,
+        _t3 = side_bar_detail.t2;
+      set_side_bar_detail({
+        t1: _t2 == "none" ? "block" :  true ? "none" : 0,
+        t0: _t,
+        t2: _t3
+      });
+    } else if (e.target.id == "t2") {
+      var _t4 = side_bar_detail.t0,
+        _t5 = side_bar_detail.t1,
+        _t6 = side_bar_detail.t2;
+      set_side_bar_detail({
+        t2: _t6 == "none" ? "block" :  true ? "none" : 0,
+        t1: _t5,
+        t0: _t4
+      });
+    }
+  };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "header"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Link, {
+    className: "header",
+    style: {
+      position: sticky == true ? "sticky" : "fixed"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
     to: _constant__WEBPACK_IMPORTED_MODULE_1__.Home_path
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "logo"
+    className: "logo",
+    onClick: logo
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "nav_container"
+    className: "nav_item_container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "nav_item",
     onMouseMove: nav_hover,
-    onMouseOut: nav_none
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Link, {
+    onMouseOut: nav_none,
+    style: {
+      paddingTop: sticky && "25px"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
     className: "a",
     id: "item0",
     to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Scenery")
   }, "\u6E56\u5149\u5C71\u8272")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "nav_item",
     onMouseOver: nav_hover,
-    onMouseOut: nav_none
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Link, {
+    onMouseOut: nav_none,
+    style: {
+      paddingTop: sticky && "25px"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
     className: "a",
     id: "item2",
     to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Food")
   }, "\u7F8E\u98DF\u9957\u5BB4")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "nav_item",
     onMouseOver: nav_hover,
-    onMouseOut: nav_none
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Link, {
+    onMouseOut: nav_none,
+    style: {
+      paddingTop: sticky && "25px"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
     className: "a",
     id: "item3",
     to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Activity")
-  }, "\u60A0\u904A\u5404\u5730")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "\u60A0\u904A\u5404\u5730"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "hover_item_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hover_nav",
     style: {
       display: display[0].display_handle
     },
     onMouseMove: nav_item_hover,
     onMouseOut: nav_none
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Scenery/1")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "northern_area hover_item ",
     style: {
       backgroundImage: "url( ".concat(_images_NorthernArea_png__WEBPACK_IMPORTED_MODULE_3__, " )")
     }
-  }, "\u5317\u53F0\u7063"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "\u5317\u53F0\u7063")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "line"
-  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Scenery/2")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "central_area hover_item ",
     style: {
       backgroundImage: "url( ".concat(_images_CentralArea_png__WEBPACK_IMPORTED_MODULE_2__, " )")
     }
-  }, "\u4E2D\u53F0\u7063"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "\u4E2D\u53F0\u7063")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "line"
-  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Scenery/3")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "southern_area hover_item ",
     style: {
       backgroundImage: "url( ".concat(_images_SouthernArea_png__WEBPACK_IMPORTED_MODULE_4__, " )")
     }
-  }, "\u5357\u53F0\u7063"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "\u5357\u53F0\u7063")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "line"
-  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Scenery/4")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "southern_area hover_item ",
     style: {
       backgroundImage: "url( ".concat(_images_EastArea_png__WEBPACK_IMPORTED_MODULE_5__, " )")
     }
-  }, "\u6771\u53F0\u7063"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "\u6771\u53F0\u7063")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "line"
-  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Scenery/5")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "southern_area hover_item ",
     style: {
       backgroundImage: "url( ".concat(_images_Outlying_Islands_png__WEBPACK_IMPORTED_MODULE_6__, " )")
     }
-  }, "\u96E2\u5CF6\u5730\u5340")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "\u96E2\u5CF6\u5730\u5340"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hover_nav",
     style: {
       display: display[2].display_handle
     },
     onMouseMove: nav_item_hover,
     onMouseOut: nav_none
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Food/1")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hover_item",
     style: {
       backgroundImage: "url( ".concat(_images_Food_png__WEBPACK_IMPORTED_MODULE_7__, " )")
     }
-  }, "\u7D93\u5178\u7F8E\u98DF"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "\u7D93\u5178\u7F8E\u98DF")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "line"
-  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Food/2")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hover_item",
     style: {
       backgroundImage: "url( ".concat(_images_Salad_png__WEBPACK_IMPORTED_MODULE_8__, " )")
     }
-  }, "\u7279\u8272\u98A8\u5473"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "\u7279\u8272\u98A8\u5473")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "line"
-  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Food/3")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hover_item",
     style: {
       backgroundImage: "url( ".concat(_images_Cake_png__WEBPACK_IMPORTED_MODULE_9__, " )")
     }
-  }, "\u751C\u54C1\u51B0\u9EDE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "\u751C\u54C1\u51B0\u9EDE")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "line"
-  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Food/4")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hover_item",
     style: {
       backgroundImage: "url( ".concat(_images_Gift_png__WEBPACK_IMPORTED_MODULE_10__, " )")
     }
-  }, "\u9001\u79AE\u9996\u9078")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "\u9001\u79AE\u9996\u9078"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hover_nav",
     style: {
       display: display[3].display_handle
     },
     onMouseMove: nav_item_hover,
     onMouseOut: nav_none
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Activity/1")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hover_item",
     style: {
       backgroundImage: "url( ".concat(_images_Lantern_png__WEBPACK_IMPORTED_MODULE_11__, " )")
     }
-  }, "\u7BC0\u65E5\u6176\u5178"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "\u7BC0\u65E5\u6176\u5178")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "line"
-  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Activity/2")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hover_item",
     style: {
       backgroundImage: "url( ".concat(_images_Painting_png__WEBPACK_IMPORTED_MODULE_12__, " )")
     }
-  }, "\u85DD\u6587\u6D3B\u52D5"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "\u85DD\u6587\u6D3B\u52D5")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "line"
-  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Activity/3")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hover_item",
     style: {
       backgroundImage: "url( ".concat(_images_Bike_png__WEBPACK_IMPORTED_MODULE_13__, " )")
     }
-  }, "\u6236\u5916\u904A\u61A9"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "\u6236\u5916\u904A\u61A9")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "line"
-  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "SideLine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Activity/4")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hover_item",
     style: {
       backgroundImage: "url( ".concat(_images_Clink_png__WEBPACK_IMPORTED_MODULE_14__, " )")
     }
-  }, "\u4E00\u5E74\u4E00\u5EA6"))));
+  }, "\u4E00\u5E74\u4E00\u5EA6")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "side_bar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bar_btn",
+    onClick: side_bar_show
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fa-solid fa-bars"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "filter_blur",
+    style: {
+      display: side_bar_display[0]
+    },
+    onClick: side_bar_hide
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "nav_left",
+    style: {
+      left: "".concat(side_bar_display[1], "%")
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    className: "title",
+    id: "t0",
+    onClick: side_bar_detail_handler
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    className: "title_a",
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Scenery")
+  }, "\u6E56\u5149\u5C71\u8272"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    style: {
+      display: side_bar_detail.t0
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Scenery/1")
+  }, "\u5317\u53F0\u7063")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Scenery/2")
+  }, "\u4E2D\u53F0\u7063")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Scenery/3")
+  }, "\u5357\u81FA\u7063")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Scenery/4")
+  }, "\u6771\u53F0\u7063")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Scenery/5")
+  }, "\u96E2\u5CF6\u5730\u5340")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    className: "title",
+    id: "t1",
+    onClick: side_bar_detail_handler
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    className: "title_a",
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Food")
+  }, "\u7F8E\u98DF\u9957\u5BB4"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    style: {
+      display: side_bar_detail.t1
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Food/1")
+  }, "\u7D93\u5178\u7F8E\u98DF")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Food/2")
+  }, "\u7279\u8272\u98A8\u5473")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Food/3")
+  }, "\u751C\u54C1\u51B0\u9EDE")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Food/4")
+  }, "\u9001\u79AE\u9996\u9078")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    className: "title",
+    id: "t2",
+    onClick: side_bar_detail_handler
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    className: "title_a",
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Activity")
+  }, "\u60A0\u904A\u5404\u5730"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    style: {
+      display: side_bar_detail.t2
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Activity/1")
+  }, "\u7BC0\u65E5\u6176\u5178")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Activity/2")
+  }, "\u85DD\u6587\u6D3B\u52D5")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Activity/3")
+  }, "\u6236\u5916\u904A\u61A9")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/Activity/4")
+  }, "\u4E00\u5E74\u4E00\u5EA6"))))))));
 };
 
 
@@ -5410,7 +6770,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var _images_street_2_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../images/street-2.jpg */ "./src/images/street-2.jpg");
+/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../constant */ "./src/js/constant.js");
 
 
 
@@ -5418,18 +6778,17 @@ var MainItems = function MainItems(_ref) {
   var picture_url = _ref.picture_url,
     name = _ref.name,
     caption = _ref.caption,
-    restaurant = _ref.restaurant;
-  if (picture_url == undefined) {
-    picture_url = _images_street_2_jpg__WEBPACK_IMPORTED_MODULE_1__;
-  }
+    pin = _ref.pin,
+    id = _ref.id;
   var i = true;
-  if (restaurant == undefined) {
+  if (pin == undefined) {
     i = false;
   } else {
     i = true;
   }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-    className: "item_a"
+    className: "item_a",
+    to: "".concat(_constant__WEBPACK_IMPORTED_MODULE_1__.Home_path, "/ItemsPage/").concat(id)
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "item_container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
@@ -5484,6 +6843,36 @@ var MainPageBtn = function MainPageBtn(_ref) {
 
 /***/ }),
 
+/***/ "./src/js/pages/components/ScrollTop.js":
+/*!**********************************************!*\
+  !*** ./src/js/pages/components/ScrollTop.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ScrollTop": () => (/* binding */ ScrollTop)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var ScrollTop = function ScrollTop() {
+  var to_top = function to_top() {
+    window.scrollTo(0, 0);
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "to_top_btn_container",
+    onClick: to_top
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "to_top_btn"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fa-solid fa-angle-up"
+  }))));
+};
+
+
+/***/ }),
+
 /***/ "./src/js/pages/components/Search.js":
 /*!*******************************************!*\
   !*** ./src/js/pages/components/Search.js ***!
@@ -5496,18 +6885,236 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Activity_ActivityMain__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Activity/ActivityMain */ "./src/js/pages/Activity/ActivityMain.js");
+/* harmony import */ var _Food_FoodMain__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Food/FoodMain */ "./src/js/pages/Food/FoodMain.js");
+/* harmony import */ var _Scenery_SceneryMain__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Scenery/SceneryMain */ "./src/js/pages/Scenery/SceneryMain.js");
+/* harmony import */ var _SearchTips__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SearchTips */ "./src/js/pages/components/SearchTips.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var Search = function Search() {
+
+
+
+
+var Search = function Search(_ref) {
+  var search_for = _ref.search_for;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState2 = _slicedToArray(_useState, 2),
+    city = _useState2[0],
+    set_city = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState4 = _slicedToArray(_useState3, 2),
+    normal_search = _useState4[0],
+    set_normal_search = _useState4[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (search_for == "臺北" || search_for == "台北" || search_for == "臺北市" || search_for == "台北市") {
+      set_city("臺北市");
+    } else if (search_for == "新北" || search_for == "新北市") {
+      set_city("新北市");
+    } else if (search_for == "桃園" || search_for == "桃園市") {
+      set_city("桃園市");
+    } else if (search_for == "台中" || search_for == "臺中" || search_for == "臺中市" || search_for == "台中市") {
+      set_city("臺中市");
+    } else if (search_for == "台南" || search_for == "臺南" || search_for == "臺南市" || search_for == "台南市") {
+      set_city("臺南市");
+    } else if (search_for == "高雄" || search_for == "高雄市") {
+      set_city("高雄市");
+    } else if (search_for == "基隆" || search_for == "基隆市") {
+      set_city("基隆市");
+    } else if (search_for == "新竹市") {
+      set_city("新竹市");
+    } else if (search_for == "新竹縣") {
+      set_city("新竹縣");
+    } else if (search_for == "新竹") {
+      set_city("新竹");
+    } else if (search_for == "嘉義市") {
+      set_city("嘉義市");
+    } else if (search_for == "嘉義縣") {
+      set_city("嘉義縣");
+    } else if (search_for == "嘉義") {
+      set_city("嘉義");
+    } else if (search_for == "苗栗" || search_for == "苗栗縣") {
+      set_city("苗栗縣");
+    } else if (search_for == "彰化" || search_for == "彰化縣") {
+      set_city("彰化縣");
+    } else if (search_for == "南投" || search_for == "南投縣") {
+      set_city("南投縣");
+    } else if (search_for == "雲林" || search_for == "雲林縣") {
+      set_city("雲林縣");
+    } else if (search_for == "屏東" || search_for == "屏東縣") {
+      set_city("屏東縣");
+    } else if (search_for == "宜蘭" || search_for == "宜蘭縣") {
+      set_city("宜蘭縣");
+    } else if (search_for == "花蓮" || search_for == "花蓮縣") {
+      set_city("花蓮縣");
+    } else if (search_for == "臺東" || search_for == "臺東縣" || search_for == "台東" || search_for == "台東縣") {
+      set_city("臺東縣");
+    } else if (search_for == "澎湖" || search_for == "澎湖縣") {
+      set_city("澎湖縣");
+    } else if (search_for == "金門" || search_for == "金門縣") {
+      set_city("金門縣");
+    } else if (search_for == "馬祖" || search_for == "連江" || search_for == "連江縣") {
+      set_city("連江縣");
+    } else {
+      set_normal_search(search_for);
+      set_city();
+    }
+  }, [search_for]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "search_main"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tips_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SearchTips__WEBPACK_IMPORTED_MODULE_4__.SearchTips, {
+    explain: "搜尋",
+    search_for: search_for
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "result_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Scenery_SceneryMain__WEBPACK_IMPORTED_MODULE_3__.SceneryMain, {
+    title: "景點",
+    city: city,
+    normal_search: normal_search
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "result_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Food_FoodMain__WEBPACK_IMPORTED_MODULE_2__.FoodMain, {
+    title: "美食",
+    city: city,
+    normal_search: normal_search
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "result_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Activity_ActivityMain__WEBPACK_IMPORTED_MODULE_1__.ActivityMain, {
+    title: "活動",
+    city: city,
+    normal_search: normal_search
+  }))));
+};
+
+
+/***/ }),
+
+/***/ "./src/js/pages/components/SearchBtn.js":
+/*!**********************************************!*\
+  !*** ./src/js/pages/components/SearchBtn.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SearchBtn": () => (/* binding */ SearchBtn)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../context */ "./src/js/context.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../constant */ "./src/js/constant.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var SearchBtn = function SearchBtn() {
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_context__WEBPACK_IMPORTED_MODULE_1__.context_1),
+    set_searching = _useContext.set_searching,
+    set_search_for = _useContext.set_search_for;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("Where Are You Going"),
+    _useState2 = _slicedToArray(_useState, 2),
+    placeholder = _useState2[0],
+    set_placeholder = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState4 = _slicedToArray(_useState3, 2),
+    search_data = _useState4[0],
+    set_search_data = _useState4[1];
+  var input = function input(e) {
+    set_search_data(e.target.value);
+  };
+  var to_search = function to_search() {
+    if (search_data === "") {
+      set_placeholder(" *請輸入關鍵字* ");
+    } else {
+      window.scrollTo(0, 740);
+      set_search_data("");
+      set_searching(true);
+      set_search_for(search_data);
+    }
+  };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "input_container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
     className: "fa-solid fa-magnifying-glass"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "search",
-    placeholder: "Where Are You Going"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "GO_btn"
-  }, "GO")));
+    placeholder: placeholder,
+    value: search_data,
+    onChange: input
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+    className: "GO_a",
+    to: _constant__WEBPACK_IMPORTED_MODULE_2__.Home_path
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "GO_btn",
+    onClick: to_search
+  }, "GO"))));
+};
+
+
+/***/ }),
+
+/***/ "./src/js/pages/components/SearchTips.js":
+/*!***********************************************!*\
+  !*** ./src/js/pages/components/SearchTips.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SearchTips": () => (/* binding */ SearchTips)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var SearchTips = function SearchTips(_ref) {
+  var explain = _ref.explain,
+    search_for = _ref.search_for;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tips"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fa-solid fa-caret-right"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, explain, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    style: {
+      color: "#623A28",
+      fontWeight: 600,
+      fontSize: "20px"
+    }
+  }, " ", search_for, " ")))));
+};
+
+
+/***/ }),
+
+/***/ "./src/js/pages/components/footer.js":
+/*!*******************************************!*\
+  !*** ./src/js/pages/components/footer.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Footer": () => (/* binding */ Footer)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var Footer = function Footer() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("footer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Source : Transport Data eXchange"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Email : ks24734542@gmail.com"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Copyright 2023 \xA9 Heng All rights reserved."))));
 };
 
 
@@ -41577,6 +43184,26 @@ module.exports = __webpack_require__.p + "images/Lantern.png";
 
 /***/ }),
 
+/***/ "./src/images/NoPicture-small.png":
+/*!****************************************!*\
+  !*** ./src/images/NoPicture-small.png ***!
+  \****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/NoPicture-small.png";
+
+/***/ }),
+
+/***/ "./src/images/NoPicture.png":
+/*!**********************************!*\
+  !*** ./src/images/NoPicture.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/NoPicture.png";
+
+/***/ }),
+
 /***/ "./src/images/NorthernArea.png":
 /*!*************************************!*\
   !*** ./src/images/NorthernArea.png ***!
@@ -41627,6 +43254,56 @@ module.exports = __webpack_require__.p + "images/SouthernArea.png";
 
 /***/ }),
 
+/***/ "./src/images/firework-1.jpg":
+/*!***********************************!*\
+  !*** ./src/images/firework-1.jpg ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/firework-1.jpg";
+
+/***/ }),
+
+/***/ "./src/images/food-1.jpg":
+/*!*******************************!*\
+  !*** ./src/images/food-1.jpg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/food-1.jpg";
+
+/***/ }),
+
+/***/ "./src/images/food-2.jpg":
+/*!*******************************!*\
+  !*** ./src/images/food-2.jpg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/food-2.jpg";
+
+/***/ }),
+
+/***/ "./src/images/food-3.jpg":
+/*!*******************************!*\
+  !*** ./src/images/food-3.jpg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/food-3.jpg";
+
+/***/ }),
+
+/***/ "./src/images/lake-2-V2.jpg":
+/*!**********************************!*\
+  !*** ./src/images/lake-2-V2.jpg ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/lake-2-V2.jpg";
+
+/***/ }),
+
 /***/ "./src/images/mountain-1-banner.jpg":
 /*!******************************************!*\
   !*** ./src/images/mountain-1-banner.jpg ***!
@@ -41657,6 +43334,56 @@ module.exports = __webpack_require__.p + "images/mountain-4-bannerV2.jpg";
 
 /***/ }),
 
+/***/ "./src/images/mountain-6.jpg":
+/*!***********************************!*\
+  !*** ./src/images/mountain-6.jpg ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/mountain-6.jpg";
+
+/***/ }),
+
+/***/ "./src/images/page-banner-food.jpg":
+/*!*****************************************!*\
+  !*** ./src/images/page-banner-food.jpg ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/page-banner-food.jpg";
+
+/***/ }),
+
+/***/ "./src/images/page-banner-road.jpg":
+/*!*****************************************!*\
+  !*** ./src/images/page-banner-road.jpg ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/page-banner-road.jpg";
+
+/***/ }),
+
+/***/ "./src/images/page-banner-sea-1.jpg":
+/*!******************************************!*\
+  !*** ./src/images/page-banner-sea-1.jpg ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/page-banner-sea-1.jpg";
+
+/***/ }),
+
+/***/ "./src/images/street-1.jpg":
+/*!*********************************!*\
+  !*** ./src/images/street-1.jpg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/street-1.jpg";
+
+/***/ }),
+
 /***/ "./src/images/street-2.jpg":
 /*!*********************************!*\
   !*** ./src/images/street-2.jpg ***!
@@ -41664,6 +43391,16 @@ module.exports = __webpack_require__.p + "images/mountain-4-bannerV2.jpg";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "images/street-2.jpg";
+
+/***/ }),
+
+/***/ "./src/images/structures-2.jpg":
+/*!*************************************!*\
+  !*** ./src/images/structures-2.jpg ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/structures-2.jpg";
 
 /***/ })
 
@@ -41765,7 +43502,7 @@ module.exports = __webpack_require__.p + "images/street-2.jpg";
 /******/ 		var document = __webpack_require__.g.document;
 /******/ 		if (!scriptUrl && document) {
 /******/ 			if (document.currentScript)
-/******/ 				scriptUrl = document.currentScript.src
+/******/ 				scriptUrl = document.currentScript.src;
 /******/ 			if (!scriptUrl) {
 /******/ 				var scripts = document.getElementsByTagName("script");
 /******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
@@ -41806,4 +43543,4 @@ theRoot.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().create
 
 /******/ })()
 ;
-//# sourceMappingURL=index-7134a04fd6a67b1fd0f6-bundle.js.map
+//# sourceMappingURL=index-eb2655e67b4a38d481dd-bundle.js.map
